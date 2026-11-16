@@ -5,7 +5,7 @@ $taches=[
 'titre' => 'Créer une maquette HTML',
 'description' => 'Réaliser la structure HTML de la page d’accueil.',
 'date_limite' => '2026-11-15',
-'priorite' => 'Haute',
+'priorite' => 'Moyenne',
 'terminee' => false
 ],
 [
@@ -13,8 +13,8 @@ $taches=[
 'titre' => 'Intégrer les styles CSS',
 'description' => 'Appliquer les couleurs et les espacements.',
 'date_limite' => '2026-12-16',
-'priorite' => 'Haute',
-'terminee' => false
+'priorite' => 'Basse',
+'terminee' => true
 ],
 [
 'id' => 3,
@@ -29,7 +29,7 @@ $taches=[
 'titre' => 'Tester l application',
 'description' => 'Vérifier le bon fonctionnement et corriger les erreurs.',
 'date_limite' => '2026-11-15',
-'priorite' => 'Haute',
+'priorite' => 'Moyenne',
 'terminee' => false
 ],
 [
@@ -38,14 +38,14 @@ $taches=[
 'description' => 'Créer un tableau multidimensionnel avec 8 tâches.',
 'date_limite' => '2026-11-15',
 'priorite' => 'Haute',
-'terminee' => false
+'terminee' => true
 ],
 [
 'id' => 5,
 'titre' => 'Afficher les statistiques',
 'description' => 'Calculer et afficher le total, les taches terminées et non terminées.',
 'date_limite' => '2026-11-15',
-'priorite' => 'Haute',
+'priorite' => 'Basse',
 'terminee' => false
 ],
 [
@@ -54,7 +54,7 @@ $taches=[
 'description' => 'Réaliser la structure HTML de la page d accueil.',
 'date_limite' => '2026-11-15',
 'priorite' => 'Haute',
-'terminee' => false
+'terminee' => true
 ],
 [
 'id' => 7,
@@ -62,18 +62,31 @@ $taches=[
 'description' => 'Créer un dossier pour le projet et y placer les fichiers (index.php, style.css).',
 'date_limite' => '2026-11-15',
 'priorite' => 'Haute',
-'terminee' => false
+'terminee' => true
 ],
 [
 'id' => 8,
 'titre' => 'Vérifier l affichage des tâches',
 'description' => 'Tester tous les cas (terminée et non terminée) et corriger le style.',
 'date_limite' => '2026-11-15',
-'priorite' => 'Haute',
+'priorite' => 'Moyenne',
 'terminee' => false
 ],
 
 ];
+
+$totalTaches = count($taches);
+$tachesTerminees = 0;
+
+foreach ($taches as $tache) {
+    if ($tache['terminee'] === true) {
+        $tachesTerminees++;
+    }
+}
+
+$tachesRestantes = $totalTaches - $tachesTerminees;
+
+
 
 
 
